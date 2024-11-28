@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+.clavier > input {
+  display: flex;
+  margin: 20px 350px 30px 600px;
+  width: 250px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.keyBoard {
+  margin: 20px auto;
+  width: 800px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+  gap: 10px 10px;
+}
+.keyBoard .key {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(109, 68, 221);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.keyBoard .key:hover{
+    background-color: rgb(131, 131, 181);
+}
+
+.btnEnd {
+  margin: 100px 20px 20px 350px;
+  width: 800px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
+
+.btnEnd .key {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(109, 68, 221);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.btnEnd .key:hover{
+    background-color: rgb(131, 131, 181);
+}
+.clicked {
+  opacity: 0.5;
+  /* background-color: rgb(131, 131, 181); */
+}
