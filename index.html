@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Keyboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <title>pom game</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
+    <div class="black"></div>
+    <div class="choice">
+        <p>BLASTMAN</p>
+        <p>select a difficulty</p>
+        <div class="difficulty">
+            <button value="10">Easy 10 tries</button>
+            <button value="6">Medium 6 tries</button>
+            <button value="4">Hard 4 tries</button>
+
+        </div>
+    </div>
+    <header>
+        <div class="n1">
+            <button class="bitit">| |</button>
+            <div class="num">
+                <h1>WORD# <span>1</span></h1>
+            </div>
+        </div>
+        <div class="s2">
+            <div class="imgdiv1">
+                <img src="gem.png" alt="" srcset="">
+            </div>
+            <div class="n2">
+
+            </div>
+            <div class="n3">
+
+            </div>
+            
+        </div>
+       
+    
+    </header>
+
+
+    <div class="bordrgame">
+
+    
+    <div class="body">
+        <img src="victim.png" class="champ" alt="">
+        <img src="cartoon-dynamite-tnt-explosives-with-5411699-removebg-preview.png" class="bom" alt="">
+        <div class="time"></div>
+        <div class="lose"></div>
+        <div class="stick"></div>
+        <div class="ground"></div>
+    </div>
+
+    <div class="text">
+    <div class="geme"></div>
+
+    <div class="hint"></div>
+
     <div class="clavier">
-        
-        <input type="text" class="textArea" readonly>
         <div class="keyBoard">
             <button class="key" value="A" data-key="A">A</button>
             <button class="key" value="B" data-key="B">B</button>
@@ -41,6 +94,16 @@
             <button class="key" value="Z" data-key="Z">Z</button>
         </div>
     </div>
+</div>
+
+<audio src="Explosion Sound Effect.mp3" class="effect"></audio>
+<audio src="You Lost - Sound Effect.mp3" class="loseSound"></audio>
+<audio src="Correct Answer sound effect.mp3" class="correct"></audio>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
+
+  
