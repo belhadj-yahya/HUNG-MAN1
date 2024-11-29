@@ -1,67 +1,313 @@
-* {
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.black{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+.choice{
+    width: 60%;
+    height: 60vh;
+    display: flex;
+    gap: 5vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 18%;
+    top: 20%;
+    background-color: #7B68EE;
+    z-index: 1002;
+    border-radius: 20px;
+}
+.choice p:nth-child(1){
+    font-family: 'Luckiest Guy', sans-serif;
+    margin: 20px;
+    font-size: 6em;
+    color: #777a8e;
+    text-shadow: 6px -7px 0px #000,   -2px -2px 0px #000, 2px -2px 0px #000,   -2px 2px 0px #000;   
+    animation-name: moving;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes moving {
+    0%{
+        transform: translateY(1);
+    }
+    25%{
+        transform: translateY(-10vh);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    75%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: translateY(1);
+    }
+    
 }
 
-.clavier > input {
-  display: flex;
-  margin: 20px 350px 30px 600px;
-  width: 250px;
-  height: 30px;
-  border-radius: 20px;
+.choice p:nth-child(2){
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 2em;
+    color: #777a8e;
+    text-shadow: 2px 2px 0px #000,   -2px -2px 0px #000, 2px -2px 0px #000,   -2px 2px 0px #000;   
+
+}
+.difficulty{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.difficulty button{
+   cursor: pointer;
+   border-radius: 10px;
+   width: 10vw;
+   height: 5vh;
+   background-color: rgb(65, 53, 190);
+   font-weight: bold;
+   color: white;
+   border: 2px solid black;
+   animation-name: btn;
+   animation-duration: 1.5s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+@keyframes btn {
+     0%{
+        transform: scale(1);
+    }  
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    } 
+}
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(65, 53, 190);
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.keyBoard {
-  margin: 20px auto;
-  width: 800px;
-  height: 100px;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  row-gap: 10px;
-  column-gap: 10px;
-  gap: 10px 10px;
+.n1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.keyBoard .key {
-  border: none;
-  border-radius: 10px;
-  background-color: rgb(109, 68, 221);
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  width: 90px;
-  height: 90px;
-  cursor: pointer;
+.bitit{
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color:rgb(195, 192, 192);
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    border-radius: 50%;
+    padding-bottom: 10px;
+    border: 5px solid black;
+    z-index: 1000;
 }
-
-.keyBoard .key:hover{
-    background-color: rgb(131, 131, 181);
-}
-
-.btnEnd {
-  margin: 100px 20px 20px 350px;
-  width: 800px;
-  height: 100px;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 10px;
+.num{
+    width: 300px;
+    height: 50px;
+    background-color: aliceblue;
+    margin-left: 290px;
+    position: absolute;
+    border: 7px solid black;
+    border-radius:15px ;
 }
 
-.btnEnd .key {
-  border: none;
-  border-radius: 10px;
-  background-color: rgb(109, 68, 221);
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  width: 90px;
-  height: 90px;
-  cursor: pointer;
+.num h1{
+    text-align: center;
 }
 
-.btnEnd .key:hover{
-    background-color: rgb(131, 131, 181);
+
+.bordrgame{
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.clicked {
-  opacity: 0.5;
-  /* background-color: rgb(131, 131, 181); */
+
+.imgdiv1{
+    width: 200px;
+    height: 70px;
+}
+.imgdiv1 img{
+    width: 60px;
+}
+.bordrgame .body{
+    background-color: rgb(0, 0, 0);
+    width: 720px;
+    height: 600px;
+    margin-right: 30px;
+    border-radius: 25px;
+}
+.body{
+    background-color: #777a8e !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*the dead man*/
+.ground{
+    position: absolute;
+    top: 86%;
+    left: 21%;
+    background-color: white;
+    width: 26vw;
+    height: 12vh;
+}
+
+.stick{
+    position: absolute;
+    top: 16%;
+    left: 47%;
+    background-color: white;
+    width: 3vw;
+    height:61vh;
+}
+.bom{
+    position: absolute;
+    bottom: 30%;
+    transform: rotate(90deg);
+    left: 35.5%;
+    width: 10vw;
+    height: 45vh;
+    z-index: 2;
+}
+.lose{
+    background-color: #777a8e;
+    position: absolute;
+    bottom: 44%;
+    right: 41%;
+    width: 8vw;
+    height: 15vh;
+    z-index: 3;
+    clip-path: polygon(50% 0%, 60% 20%, 57% 39%, 85% 37%, 80% 90%, 47% 78%, 20% 90%, 0% 70%, 19% 41%, 20% 10%);
+    display: none;
+}
+.time{
+    border: 2px solid black;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    left: 44.8%;
+    bottom: 49.2%;
+    width: 4.5vw;
+    height: 8vh;
+    border-radius: 50%;
+    z-index: 3;
+    background-color: red;
+    color: white;
+}
+.champ{
+    position: absolute;
+    bottom: 13%;
+  z-index: 1;
+  height: 74vh;
+}
+
+.bordrgame .text{
+    background-color: rgb(0, 0, 0);
+    width: 720px;
+    height: 600px;
+    margin-left: 30px;
+    display: grid;
+    border-radius: 25px;
+}
+
+.text .geme{
+    width: 95%;
+    height: 100px;
+    background-color: blueviolet;
+    border-radius: 15px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text .clavier{
+    width:90% ;
+    height:300px ;
+    background-color: blueviolet;
+    margin: 30px;
+    border-radius: 15px;
+}
+.text .clavier .keyBoard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 40px 15px 8px 23px;
+}
+
+ .key{
+    width: 60px;
+    height:60px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 1.5s ease 3s ease-in-out;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3), 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.key:hover{
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4), 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    background-color: white;
+    color: black;
+}
+
+.text .clavier .btnEnd{
+    gap: 8px;
+    margin: 15px 0px 8px 70px;
+}
+.clicked{
+    background-color: rgb(224, 50, 50);
+}
+
+.hint{
+    background-color: white;
+    width: 90%;
+    height: 70px;
+    margin-left: 32px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.hintp{
+    margin: 20px;
+    font-size: 20px;
+    
 }
