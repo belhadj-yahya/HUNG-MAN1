@@ -15,30 +15,23 @@
   { word: "kangaroo", hint: "An animal that hops and has a pouch." },
   { word: "lighthouse", hint: "Helps guide ships at night with a bright light." },
   { word: "mountain", hint: "A tall, natural landform that rises above its surroundings." },
-  { word: "omar", hint: "chkon hwa yahya," }
+  { word: "yahya", hint: "the worst programer in the world," }
 ];
 
-let count
-let gameTime =  document.querySelector(".time")
+let count = 0;
+let gameTime =  document.querySelector(".miss")
+let head = document.querySelector(".head")
+let body = document.querySelector(".bodyd")
+let leftArm = document.querySelector(".left")
+let leftLeg = document.querySelector(".left-leg")
+let rightArm = document.querySelector(".right")
+let rightLeg = document.querySelector(".right-leg")
+let fullBody = [head, body, leftArm, rightArm, leftLeg, rightLeg]
+
+
 
 const allButtons= Array.from(document.getElementsByClassName("key"))
-function restartTheTimer(){
-  let btns = document.querySelectorAll(".difficulty button")
-  btns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      count = btn.value
-      gameTime.innerHTML = `${count}:00`
-      document.querySelector(".black").style.display = "none"
-      document.querySelector(".choice").style.display = "none"
-      allButtons.forEach(btn => {
-        btn.disabled = false
-        btn.style.backgroundColor = 'black'
-        btn.style.color = 'white'
-    
-      })
-    })
-  })
-}
+
 
 let gamebord= document.querySelector('.geme')
 let hinttext= document.querySelector('.hint')
@@ -47,19 +40,19 @@ let moro= []
 let wordarray= []
 //for counting lifes and losing
 
-function rando() {
+function randomWord() {
   const index= Math.floor(Math.random() * hangmanWords.length)
   return hangmanWords[index]
 }
 
 function startgame() {
-  document.querySelector(".bom").style.display="block"
-  document.querySelector(".time").style.display="flex"
-  document.querySelector(".lose").style.display = "none"
-  document.querySelector(".black").style.display = "block"
-  document.querySelector(".choice").style.display = "flex"
-  restartTheTimer()
-  const words= rando()
+  // document.querySelector(".bom").style.display="block"
+  // document.querySelector(".time").style.display="flex"
+  // document.querySelector(".lose").style.display = "none"
+  // document.querySelector(".black").style.display = "block"
+  // document.querySelector(".choice").style.display = "flex"
+  // restartTheTimer()
+  const words= randomWord()
   word = words.word.toUpperCase()
   const hint= words.hint
   const p =document.createElement('p')
@@ -68,9 +61,7 @@ function startgame() {
   hinttext.appendChild(p)
   wordarray = Array.from(word);
   console.log(wordarray)
-  moro = Array(word.length).fill('_');
-          gameTime.innerHTML = `${count}:00`
-          
+  moro = Array(word.length).fill('_');  
   draw();
 }
 
@@ -90,7 +81,7 @@ function draw() {
 }
 
 function chicke(harf) {
-  harf= harf.toUpperCase()
+  harf = harf.toUpperCase()
       if (word.includes(harf)) {
          document.querySelector(".correct").play()
           for (let i = 0; i < word.length; i++) {
@@ -101,17 +92,15 @@ function chicke(harf) {
           }
           draw()
       } else {
-          count--
-          gameTime.innerHTML = `${count}:00` 
-          if(count === 0){
+        fullBody[count].style.display = 'block';
+          count++
+
+          gameTime.innerHTML = `number of tries left ${count}/6` 
+          if(count === 6){
             gamebord.innerHTML= "";
             hinttext.innerHTML= "";
             moro= []
             wordarray= []
-            document.querySelector(".bom").style.display="none"
-            document.querySelector(".time").style.display="none"
-            document.querySelector(".lose").style.display = "block"
-            document.querySelector(".effect").play()
             setTimeout(() => {
               document.querySelector(".loseSound").play()
             }, 2000);
